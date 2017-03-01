@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+   root 'static_pages#home'
     #auto generated Home page.
   get 'static_pages/home'
   
@@ -8,6 +9,6 @@ Rails.application.routes.draw do
   #auto generated About Page
   get 'static_pages/about'
 
-    root 'application#hello'
+   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
