@@ -1,8 +1,12 @@
 require 'test_helper'
-
-class ApplicationHelperTest < ActionView::TestCase
-    test "full title helper" do
-        assert_equal full_title,         FILL_IN
-        assert_equal full_title("Help"), FILL_IN
+module ApplicationHelper
+#Returns the full title on per-page basis
+def full_title(page_title = '')
+    base_title = "Firecaller Blogs"
+    if page_title.empty?
+        base_title
+    else
+    page_title + " | " + base_title
     end
+end
 end
