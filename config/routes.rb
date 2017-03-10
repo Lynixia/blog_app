@@ -16,6 +16,11 @@ get '/contact',  to: 'static_pages#contact'
 
 #auto generate new Users Page
 get '/signup',   to: 'users#new'
+
+post '/signup', to: 'users#create'
+
+#How to display the user on the Page
+resources :users
    
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
