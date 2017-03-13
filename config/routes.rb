@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
    root 'static_pages#home'
@@ -18,6 +20,11 @@ get '/contact',  to: 'static_pages#contact'
 get '/signup',   to: 'users#new'
 
 post '/signup', to: 'users#create'
+  #session  pages ! 
+  
+  get '/login',  to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
 #How to display the user on the Page
 resources :users
