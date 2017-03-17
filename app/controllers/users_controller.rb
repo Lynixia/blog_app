@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(user_params)   #Not the final Implementation!
+    @user = User.new(user_params)  #Not the final Implementation!
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Firecaller Blogs!"
@@ -23,8 +23,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, 
-                                      :password_confirmation)
-                                      
+   params.require(:user).permit(:name, :email, :password,
+     :password_confirmation)
   end 
 end
